@@ -1,3 +1,28 @@
+# 📬 Jellyfin Newsletter Plugin – ProtonMail Fork
+
+## [1.0.0] - 2025-06-15
+
+### ✨ Added
+- ✅ **ProtonMail SMTP support** using MailKit and token-based authentication
+- ✅ Added `SmtpUseSsl` configuration flag for secure delivery
+- ✅ Initial working release compatible with Jellyfin `v10.10.7`
+- ✅ `EmailService.cs` fully refactored for MailKit-based delivery
+- ✅ Updated manifest.json for plugin registration and version tracking
+
+### ♻️ Changed
+- 🔁 Replaced original `smtp.cs` with new modular `EmailService.cs`
+- 📦 Targeted `.NET 8.0` in the project to align with latest Jellyfin plugin SDK expectations
+- 🧹 Cleaned and documented the plugin configuration structure
+
+### 🐛 Known Issues
+- ❗ Currently only supports a single newsletter agent
+- 📫 Only ProtonMail SMTP is tested — other providers may not work without further modification
+
+---
+
+🔗 **Forked from:** [Cloud9Developer/Jellyfin-Newsletter-Plugin](https://github.com/Cloud9Developer/Jellyfin-Newsletter-Plugin)
+
+
 # 0.6.4.0
 - Minor bug fix
 
