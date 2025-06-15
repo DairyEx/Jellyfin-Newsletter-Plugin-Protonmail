@@ -12,7 +12,9 @@ public class PluginConfiguration : BasePluginConfiguration
     /// <summary>
     /// Initializes a new instance of the <see cref="PluginConfiguration"/> class.
     /// </summary>
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
     public PluginConfiguration()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
     {
         Console.WriteLine("[NLP] :: Newsletter Plugin Starting..");
 
@@ -20,20 +22,21 @@ public class PluginConfiguration : BasePluginConfiguration
         DebugMode = false;
 
         // default Server Details
-        SMTPServer = "smtp.gmail.com";
-        SMTPPort = 587;
-        SMTPUser = string.Empty;
-        SMTPPass = string.Empty;
+        SmtpHost = "smtp.protonmail.ch";
+        SmtpPort = 587;
+        SmtpUsername = string.Empty;
+        SmtpPassword = string.Empty;
+        SmtpUseSsl = true;
 
         // default Email Details
         ToAddr = string.Empty;
-        FromAddr = "JellyfinNewsletter@donotreply.com";
+        SenderName = "JellyfinNewsletter@donotreply";
         Subject = "Jellyfin Newsletter";
 
         // Attempt Dynamic set of Body and Entry HTML, set empty if failure occurs
         Body = string.Empty;
         Entry = string.Empty;
-        
+
         try
         {
             string[] dirs = Directory.GetDirectories(@".", "config/plugins/Newsletters_*.*.*.*", SearchOption.AllDirectories);
@@ -51,7 +54,7 @@ public class PluginConfiguration : BasePluginConfiguration
                     break;
                 }
             }
-            
+
             try
             {
                 Body = File.ReadAllText($"{pluginDir}/Templates/template_modern_body.html");
@@ -115,22 +118,22 @@ public class PluginConfiguration : BasePluginConfiguration
     /// <summary>
     /// Gets or sets a value indicating whether some true or false setting is enabled..
     /// </summary>
-    public string SMTPServer { get; set; }
+    public string SmtpHost { get; set; }
 
     /// <summary>
     /// Gets or sets an integer setting.
     /// </summary>
-    public int SMTPPort { get; set; }
+    public int SmtpPort { get; set; }
 
     /// <summary>
     /// Gets or sets a string setting.
     /// </summary>
-    public string SMTPUser { get; set; }
+    public string SmtpUsername { get; set; }
 
     /// <summary>
     /// Gets or sets a string setting.
     /// </summary>
-    public string SMTPPass { get; set; }
+    public string SmtpPassword { get; set; }
 
     // -----------------------------------
 
@@ -144,7 +147,7 @@ public class PluginConfiguration : BasePluginConfiguration
     /// <summary>
     /// Gets or sets a string setting.
     /// </summary>
-    public string FromAddr { get; set; }
+    public string SenderName { get; set; }
 
     /// <summary>
     /// Gets or sets a string setting.
@@ -242,4 +245,7 @@ public class PluginConfiguration : BasePluginConfiguration
     /// Gets or sets a value indicating whether Movies should be scanned.
     /// </summary>
     public bool MoviesEnabled { get; set; }
+
+    public bool SmtpUseSsl{get; set; } = true;
+    
 }
