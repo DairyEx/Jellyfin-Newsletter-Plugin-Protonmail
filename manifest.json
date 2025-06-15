@@ -13,7 +13,7 @@
         "changelog": "Initial ProtonMail-compatible release. Uses MailKit with support for encrypted token auth.",
         "targetAbi": "10.10.0.0",
         "sourceUrl": "https://github.com/DairyEx/Jellyfin-Newsletter-Plugin-Protonmail/releases/download/1.0.0/newsletters_1.0.0.zip",
-        "checksum": "A1FB2DB6F8C04FCA97F334414C5722065AB2DD5088380644BFA8959984F1810A",
+        "checksum": "174AA8C79F85F49315AB19C43DD52A2E7DD9012290CFBC76FD6F97E00AED5F9B",
         "timestamp": "2025-06-15T00:00:00Z"
       }
     ]
