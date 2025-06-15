@@ -1,6 +1,6 @@
 [
   {
-    "guid": "dairyex-newsletter-protonmail",
+    "guid": "60f478ab-2dd6-4ea0-af10-04d033f75979",
     "name": "Newsletter Plugin (ProtonMail)",
     "description": "This plugin sends email newsletters for newly added media using ProtonMail SMTP via MailKit.",
     "overview": "Send newsletters for recently added media via ProtonMail.",
